@@ -1,7 +1,4 @@
-
-import React from 'react'
-
-import { NativeModules, Platform } from 'react-native'
+import { NativeModules } from 'react-native'
 
 const { RNPaystackModule } = NativeModules;
 const checkInit = (instance) => {
@@ -13,7 +10,7 @@ const checkInit = (instance) => {
 class RNPaystack {
 	paystackInitialized = false;
 
-	init(options: { [x: string]: any }) {
+	init(options) {
 		if (typeof options != 'object') {
 			return Promise.reject(new Error("Method argument can only be a Javascript object"));
 		}
@@ -22,7 +19,7 @@ class RNPaystack {
 		return RNPaystackModule.init(options);
 	}
 
-	chargeCard(chargeParams: { [x: string]: any }) {
+	chargeCard(chargeParams) {
 		if (typeof chargeParams != 'object') {
 			return Promise.reject(new Error("Method argument can only be a Javascript object"));
 		}
@@ -31,7 +28,7 @@ class RNPaystack {
 		return RNPaystackModule.chargeCard(chargeParams);
 	}
 
-	chargeCardWithAccessCode(chargeParams: { [x: string]: any }) {
+	chargeCardWithAccessCode(chargeParams) {
 		if (typeof chargeParams != 'object') {
 			return Promise.reject(new Error("Method argument can only be a Javascript object"));
 		}

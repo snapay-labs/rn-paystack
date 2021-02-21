@@ -1,6 +1,6 @@
 # React Native Wrapper for Paystack Mobile SDKs
 
-for Android & iOS by [Arttitude 360](http://www.arttitude360.com)
+> Based off fork from [https://github.com/snapay/rn-paystack]https://github.com/snapay/rn-paystack
 
 ## Index
 
@@ -19,15 +19,15 @@ This React Native module provides a wrapper to add Paystack Payments to your Rea
 
 ## 2. Installation
 
-You can pull in react-native-paystack via npm:
+You can pull in rn-paystack via npm:
 
 ```shell
-npm install react-native-paystack --save
+npm install rn-paystack --save
 ```
 OR 
 
 ```shell
-yarn add react-native-paystack
+yarn add rn-paystack
 ```
 
 ### Versioning
@@ -41,7 +41,7 @@ yarn add react-native-paystack
 ##### 1) Auto Linking & Cocoapods Integration (React Native 0.59 and lower)
 - If you do not have CocoaPods already installed on your machine, run `gem install cocoapods` to set it up the first time. (Hint: Go grab a cup of coffee!)
 - If you are not using Cocoapods in your project already, run `cd ios && pod init` at the root directory of your project. This would create a `Podfile` in your `ios` directory.
-- Run `react-native link react-native-paystack` at the root directory of your project and ensure you edit your Podfile to look like the sample below (remove all the targets you are not building for, such as Tests and tvOS):
+- Run `react-native link rn-paystack` at the root directory of your project and ensure you edit your Podfile to look like the sample below (remove all the targets you are not building for, such as Tests and tvOS):
 
 ```ruby
 # platform :ios, '9.0'
@@ -69,7 +69,7 @@ target '_YOUR_PROJECT_TARGET_' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
   # This should already be auto-added for you, if not add the line below
-  pod 'react-native-paystack', :path => '../node_modules/react-native-paystack'
+  pod 'rn-paystack', :path => '../node_modules/rn-paystack'
 
 end
 ```
@@ -89,38 +89,38 @@ pod install
 
 #### Manual Config (iOS)
 
-- The following steps are optional, should be taken if you have not run `react-native link react-native-paystack` already.
+- The following steps are optional, should be taken if you have not run `react-native link rn-paystack` already.
 - In XCode's "Project navigator", right click on project name folder ➜ `Add Files to <...>`. Ensure `Copy items if needed` and `Create groups` are checked
-- Go to `node_modules` ➜ `react-native-paystack/ios` ➜ add `RNPaystack.xcodeproj`.
+- Go to `node_modules` ➜ `rn-paystack/ios` ➜ add `RNPaystack.xcodeproj`.
 - Click on your main project file (the one that represents the .xcodeproj for your project) select `Build Phases` and drag the static library, `libRNPaystack.a` from the `Products` folder inside `RNPaystack.xcodeproj` to `Link Binary With Libraries`. See the [react-native docs](https://facebook.github.io/react-native/docs/linking-libraries-ios.html) for more details.
 
 #### Autolinking on Android (React Native 0.59 and lower)
-- Run `react-native link react-native-paystack` at the root directory of your project.
+- Run `react-native link rn-paystack` at the root directory of your project.
 
 #### Autolinking on Android (React Native 0.60 and higher)
 Since React Native 0.60 and higher, [autolinking](https://github.com/react-native-community/cli/blob/master/docs/autolinking.md) makes the installation process simpler. Nothing more to do here (Gradle has you all set to go) - just head over to usage!
 
 #### Manual Config (Android)
 
-- The following steps are optional, should be taken if you have not run `react-native link react-native-paystack` already.
+- The following steps are optional, should be taken if you have not run `react-native link rn-paystack` already.
 - Add the following in your `android/settings.gradle` file:
 
 ```java
-include ':react-native-paystack'
-project(':react-native-paystack').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-paystack/android')
+include ':rn-paystack'
+project(':rn-paystack').projectDir = new File(rootProject.projectDir, '../node_modules/rn-paystack/android')
 ```
 - Add the following in your `android/app/build.grade` file:
 
 ```java
 dependencies {
     ...
-    compile project(':react-native-paystack')
+    compile project(':rn-paystack')
 }
 ```
 - Add the following in your `...MainApplication.java` file:
 
 ```java
-import com.arttitude360.reactnative.rnpaystack.RNPaystackPackage;
+import com.snapay.reactnative.rnpaystack.RNPaystackPackage;
 
 @Override
 protected List<ReactPackage> getPackages() {
@@ -132,10 +132,10 @@ protected List<ReactPackage> getPackages() {
 }
 ``` 
 
-#### More Config (Only applicable to Android using react-native-paystack v3.1.4+ & RN less than 0.57.0)
+#### More Config (Only applicable to Android using rn-paystack v3.1.4+ & RN less than 0.57.0)
 - Update Gradle plugin to v3.0.0+ for your app, follow the following steps if you are not sure how:
-  * Edit your `~ android/build.gradle` to look similar to [build.gradle](https://github.com/tolu360/vestarapp/blob/master/android/build.gradle)
-  * Edit your `~ android/gradle/wrapper/gradle-wrapper.properties` to look similar to [gradle-wrapper.properties](https://github.com/tolu360/vestarapp/blob/master/android/gradle/wrapper/gradle-wrapper.properties)
+  * Edit your `~ android/build.gradle` to look similar to [build.gradle](https://github.com/snapay/vestarapp/blob/master/android/build.gradle)
+  * Edit your `~ android/gradle/wrapper/gradle-wrapper.properties` to look similar to [gradle-wrapper.properties](https://github.com/snapay/vestarapp/blob/master/android/gradle/wrapper/gradle-wrapper.properties)
 - To avoid build issues, enable `Aapt2` for your project by adding `android.enableAapt2=true` to your `android/gradle.properties` file.
 - If you are using RN with a version lower than 0.57.0, it is important you replace your `node-modules/react-native/react.gradle` file with [this version @ commit da6a5e0](https://github.com/facebook/react-native/blob/da6a5e0439c168147271ef66ad5ebbeebd6fce3b/react.gradle) to avoid further build issues when assembling a release version of your app.
 
@@ -145,13 +145,13 @@ protected List<ReactPackage> getPackages() {
 Somewhere high up in your project and way before calling any other method exposed by this library, your `index` file or equivalent is a good spot, ensure you initialize the library with your `public key` as follos:
 
 ```js
-import RNPaystack from 'react-native-paystack';
+import RNPaystack from 'rn-paystack';
 
 RNPaystack.init({ publicKey: 'YOUR_PUBLIC_KEY_HERE' });
 ```
 
 ### Charging a Card with Access Code (iOS & Android)
-It's a cinch to charge a card token using the react-native-paystack module. This is the recommended or the most-preferred workflow favored by the folks at Paystack. Initiate a new transaction on your server side using the appropriate [Paystack endpoint](https://developers.paystack.co/reference#initialize-a-transaction) - obtain an `access_code` and complete the charge on your mobile application. Pls note, the SDK assumes you are responsible for building the card form/UI.
+It's a cinch to charge a card token using the rn-paystack module. This is the recommended or the most-preferred workflow favored by the folks at Paystack. Initiate a new transaction on your server side using the appropriate [Paystack endpoint](https://developers.paystack.co/reference#initialize-a-transaction) - obtain an `access_code` and complete the charge on your mobile application. Pls note, the SDK assumes you are responsible for building the card form/UI.
 
 ```javascript
 	RNPaystack.chargeCardWithAccessCode(cardParams);
@@ -159,7 +159,7 @@ It's a cinch to charge a card token using the react-native-paystack module. This
 To be more elaborate, `cardParams` is a Javascript `Object` representing the card to be charged and `RNPaystack.chargeCardWithAccessCode()` returns a Javascript `Promise` like:
 
 ```js
-import RNPaystack from 'react-native-paystack';
+import RNPaystack from 'rn-paystack';
 
 chargeCard() {
 
@@ -203,7 +203,7 @@ An object of the form is returned from a successful token request
 ```
 
 ### Charging a Card (iOS & Android)
-Using the react-native-paystack module, you can start and complete a transaction with the mobile Paystack Android and iOS SDKs. With this option, you pass both your charge and card properties to the SDK - with this worklow, you initiate and complete a transaction on your mobile app. Note that as with charging with an access_code, the SDK assumes you are responsible for building the card form/UI.
+Using the rn-paystack module, you can start and complete a transaction with the mobile Paystack Android and iOS SDKs. With this option, you pass both your charge and card properties to the SDK - with this worklow, you initiate and complete a transaction on your mobile app. Note that as with charging with an access_code, the SDK assumes you are responsible for building the card form/UI.
 
 ```javascript
 RNPaystack.chargeCard(chargeParams);
@@ -211,7 +211,7 @@ RNPaystack.chargeCard(chargeParams);
 To be more elaborate, `chargeParams` is a Javascript `Object` representing the parameters of the charge to be initiated and `RNPaystack.chargeCard()` returns a Javascript `Promise` like:
 
 ```js
-import RNPaystack from 'react-native-paystack';
+import RNPaystack from 'rn-paystack';
 
 chargeCard() {
 
@@ -302,7 +302,4 @@ Perhaps needless to say, this module leverages the [Paystack Android SDK](https:
 * 3.2.0: A Breaking Change - Initialize library in JS, rather than in native code.
 * 3.3.0: Move to a CocoaPods Flow for iOS.
 
-## 6. License
-
- This should be [The MIT License (MIT)](http://www.opensource.org/licenses/mit-license.html). I would have to get back to you on that!
-
+Made wth ❤️ by [Snapay](http://www.snapay.ng)

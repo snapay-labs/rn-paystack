@@ -1,4 +1,4 @@
-package com.arttitude360.reactnative.rnpaystack;
+package com.snapay.reactnative.rnpaystack;
 
 
 import com.facebook.react.ReactPackage;

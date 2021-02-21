@@ -1,23 +1,24 @@
 {
-  "name": "react-native-paystack",
+  "name": "rn-paystack",
   "description": "React Native Wrappers for Paystack Android & iOS Mobile SDKs",
   "main": "index.js",
-  "author": "Tolu Olowu (Arttitude 360) <tolu@arttitude360.com>",
+  "types": "index.d.ts",
+  "author": "Edosa Kelvin <kelvin@snapay.com>",
   "version": "3.4.0",
   "scripts": {},
   "repository": {
     "type": "git",
-    "url": "https://github.com/tolu360/react-native-paystack"
+    "url": "https://github.com/snapay/rn-paystack"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/tolu360/react-native-paystack/issues"
+    "url": "https://github.com/snapay/rn-paystack/issues"
   },
-  "homepage": "https://github.com/tolu360/react-native-paystack#readme",
+  "homepage": "https://github.com/snapay/rn-paystack#readme",
   "keywords": [
     "react",
-    "react-native",
-    "react-native module",
+    "rn",
+    "rn module",
     "ios",
     "android",
     "paystack",
@@ -26,7 +27,7 @@
   ],
   "peerDependencies": {
     "react": ">=15.4.0 || >=16.x",
-    "react-native": ">=0.40.0"
+    "rn": ">=0.40.0"
   },
   "devDependencies": {}
 }
