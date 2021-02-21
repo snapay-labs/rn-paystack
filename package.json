@@ -4,7 +4,7 @@
   "main": "index.js",
   "types": "index.d.ts",
   "author": "Edosa Kelvin <kelvin@snapay.com>",
-  "version": "3.4.0",
+  "version": "3.4.1",
   "scripts": {},
   "repository": {
     "type": "git",
