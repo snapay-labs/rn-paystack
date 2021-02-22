@@ -3,14 +3,14 @@ require 'json'
 package = JSON.parse(File.read(File.join(__dir__, './package.json')))
 
 Pod::Spec.new do |s|
-  s.name           = 'react-native-paystack'
+  s.name           = 'rn-paystack'
   s.version        = package['version']
   s.summary        = package['description']
   s.description    = package['description']
   s.license        = package['license']
   s.author         = package['author']
-  s.homepage       = 'https://github.com/tolu360/react-native-paystack'
-  s.source         = { :git => 'https://github.com/tolu360/react-native-paystack.git', :tag => "v#{s.version}" }
+  s.homepage       = 'https://github.com/snapay/rn-paystack'
+  s.source         = { :git => 'https://github.com/snapay/rn-paystack.git', :tag => "v#{s.version}" }
 
   s.platform       = :ios, '9.0'
 

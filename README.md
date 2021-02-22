@@ -1,6 +1,6 @@
 # React Native Wrapper for Paystack Mobile SDKs
 
-> Based off fork from [react-native-paystack](https://github.com/tolu360/react-native-paystack)
+> Based off fork from [rn-paystack](https://github.com/snapay/rn-paystack)
 
 ## Index
 

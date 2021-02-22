@@ -3,7 +3,7 @@ import { NativeModules } from 'react-native'
 const { RNPaystackModule } = NativeModules;
 const checkInit = (instance) => {
 	if (!instance.paystackInitialized) {
-		throw new Error(`You should call init first, higher up your code like in your index file.\nRead more https://github.com/tolu360/react-native-paystack#3-usage`)
+		throw new Error(`You should call init first, higher up your code like in your index file.\nRead more https://github.com/snapay/rn-paystack#3-usage`)
 	}
 }
 
